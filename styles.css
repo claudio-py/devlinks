@@ -9,7 +9,7 @@
   --bg-url: url(./assets/dark-mobile.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.1);
-  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(255, 255, 255, 0.25);
   --social-color: rgba(255, 255, 255, 0.2);
   --switch-button: url(./assets/moon-stars2.svg);
 }
@@ -18,8 +18,8 @@
   --text-color: black;
   --bg-url: url(./assets/light-mobile.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
-  --surface-color: rgba(0, 0, 0, 0.05);
-  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --surface-color: rgba(0, 0, 0, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.25);
   --social-color: rgba(0, 0, 0, 0.1);
   --switch-button: url(./assets/sun-button.svg);
 }
@@ -66,10 +66,15 @@ body {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
+  animation: slide-out .8s;
 }
+
+#switch button:hover{
+  outline: 8px solid var(--social-color);
+}
+
 .light #switch button {
-  right: 0;
-  left: initial;
+animation: slide-in .8s forwards;
 }
 
 #switch span {
@@ -145,5 +150,21 @@ footer {
   }
   .light {
     --bg-url: url(./assets/light-desktop.jpg);
+  }
+}
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to{
+    left: 50%;
+  }
+}
+@keyframes slide-out {
+  from{
+    left: 50%;
+  }
+  to{
+    left: 0;
   }
 }
