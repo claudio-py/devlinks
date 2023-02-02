@@ -6,7 +6,7 @@
 
 :root {
   --text-color: white;
-  --bg-url: url(./assets/bckg-mobile.jpg);
+  --bg-url: url(./assets/dark-mobile.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.1);
   --surface-color-hover: rgba(255, 255, 255, 0.05);
@@ -16,7 +16,7 @@
 
 .light {
   --text-color: black;
-  --bg-url: url(./assets/light-mode.jpg);
+  --bg-url: url(./assets/light-mobile.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
@@ -29,6 +29,7 @@ body * {
 }
 body {
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 #container {
   width: 100%;
@@ -49,27 +50,24 @@ body {
   margin-top: 8px;
 }
 #switch {
- 
   position: relative;
   width: 64px;
   height: 24px;
   margin: 4px auto;
-
 }
 #switch button {
-
   width: 32px;
   height: 32px;
   background: white var(--switch-button) no-repeat center;
-   border: 0;
+  border: 0;
   border-radius: 50%;
   position: absolute;
   z-index: 1;
   left: 0;
- top: 50%;
+  top: 50%;
   transform: translateY(-50%);
 }
-.light #switch button{
+.light #switch button {
   right: 0;
   left: initial;
 }
@@ -84,7 +82,6 @@ body {
   -webkit-backdrop-filter: blur(4px);
   border-radius: 9999px;
 }
-
 
 ul {
   display: flex;
@@ -140,5 +137,13 @@ footer {
   margin-top: 24px;
   text-align: center;
   font-weight: 500;
-   font-style: oblique;
+  font-style: oblique;
+}
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/dark-desktop.jpg);
+  }
+  .light {
+    --bg-url: url(./assets/light-desktop.jpg);
+  }
 }
