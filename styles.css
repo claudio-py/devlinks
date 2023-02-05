@@ -93,7 +93,7 @@ ul {
   flex-direction: column;
   list-style: none;
   gap: 16px;
-  padding: 24px 0;
+  padding: 0px 0;
 }
 ul li a {
   display: flex;
@@ -127,6 +127,7 @@ ul li a:hover {
   padding: 16px;
   border-radius: 50%;
   transition: background 0.2s;
+  margin-top: 24px;
 }
 
 #social-links a:hover {
@@ -143,6 +144,7 @@ footer {
   text-align: center;
   font-weight: 500;
   font-style: oblique;
+  margin-bottom: 24px;
 }
 @media (min-width: 700px) {
   :root {
